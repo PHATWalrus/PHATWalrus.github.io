@@ -9,8 +9,8 @@
     <script src="js/functions.js"></script>
         <title>STRP Magisk Modules</title>
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const redirects = {
+    window.onload = function() {
+      var redirects = {
         "Stratosphere-Performance": "https://www.pling.com/p/1778931/",
         "STRP-BAG": "https://www.pling.com/p/1795477/",
         "STRP-MTK": "https://www.pling.com/p/2068024/",
@@ -41,16 +41,18 @@
         "STRP-YTR": "https://www.pling.com/p/1953846/",
         "STRP-GROUP": "https://t.me/AndroidRootModulesCommunity",
         "STRP-CHANNEL": "https://t.me/StratospherePerformance"
-        // Add more module redirects here
       };
+
+      var path = window.location.hash.slice(1); // Remove the '#' from the hash
+      var redirectUrl = redirects[path];
       
-      document.querySelectorAll(".image").forEach(image => {
-        const imageName = image.getAttribute("src").match(/\/img\/(.*).png/);
-        if (imageName && imageName[1] && redirects[imageName[1]]) {
-          image.parentElement.href = redirects[imageName[1]];
-        }
-      });
-    });
+      if (redirectUrl) {
+        window.location.href = redirectUrl;
+      } else {
+        // Handle case where the hash doesn't match any redirects
+        console.log("No redirect found for the given hash:", path);
+      }
+    };
   </script>
   </head>
   <body class="show-splash">
@@ -76,7 +78,7 @@
         <div class="header_content">
          <div class="space-div"></div>
           <h3>
-            Discover and download a collection of powerful Magisk Modules right here!ksks Enjoy an ad-free experience while exploring our curated selection of modules, carefully designed to enhance your Android device. Your support means the world to us – consider leaving a small donation to help us continue our hard work. Thank you for being part of our community!
+            Dscover and download a collection of powerful Magisk Modules right here! Enjoy an ad-free experience while exploring our curated selection of modules, carefully designed to enhance your Android device. Your support means the world to us – consider leaving a small donation to help us continue our hard work. Thank you for being part of our community!
           </h3>
           <a href="https://ko-fi.com/strpproducts" class="btn btn-readMore">Donate ❤️</a>
         </div>
