@@ -9,9 +9,11 @@
     <script src="js/functions.js"></script>
         <title>STRP Magisk Modules</title>
     <script>
-    window.onload = function() {
+    if (window.location.hash) {
+      var hash = window.location.hash.slice(1).toUpperCase(); // Remove the '#' from the hash
+      
       var redirects = {
-        "Stratosphere-Performance": "https://www.pling.com/p/1778931/",
+        "STRATOSPHERE": "https://www.pling.com/p/1778931/",
         "STRP-BAG": "https://www.pling.com/p/1795477/",
         "STRP-MTK": "https://www.pling.com/p/2068024/",
         "STRP-ULTRA-BATTERY": "https://www.pling.com/p/1864374/",
@@ -43,16 +45,15 @@
         "STRP-CHANNEL": "https://t.me/StratospherePerformance"
       };
 
-      var path = window.location.hash.slice(1); // Remove the '#' from the hash
-      var redirectUrl = redirects[path];
+      var redirectUrl = redirects[hash];
       
       if (redirectUrl) {
         window.location.href = redirectUrl;
       } else {
         // Handle case where the hash doesn't match any redirects
-        console.log("No redirect found for the given hash:", path);
+        console.log("No redirect found for the given hash:", hash);
       }
-    };
+    }
   </script>
   </head>
   <body class="show-splash">
@@ -78,7 +79,7 @@
         <div class="header_content">
          <div class="space-div"></div>
           <h3>
-            Dscover and download a collection of powerful Magisk Modules right here! Enjoy an ad-free experience while exploring our curated selection of modules, carefully designed to enhance your Android device. Your support means the world to us – consider leaving a small donation to help us continue our hard work. Thank you for being part of our community!
+            Discover and download a collection of powerful Magisk Modules right here! Enjoy an ad-free experience while exploring our curated selection of modules, carefully designed to enhance your Android device. Your support means the world to us – consider leaving a small donation to help us continue our hard work. Thank you for being part of our community!
           </h3>
           <a href="https://ko-fi.com/strpproducts" class="btn btn-readMore">Donate ❤️</a>
         </div>
